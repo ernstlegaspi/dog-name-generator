@@ -8,7 +8,7 @@ export default function Header() {
   const [activeGender, setActiveGender] = useState<PetGender>("male");
 
   return (
-    <header className="flex h-[183px] w-full items-center justify-center bg-[#F9F8F5] text-[#3A3533]">
+    <header className="flex h-[183px] w-full items-center justify-center bg-[#F9F8F5] text-brand-text">
       <div className="flex flex-col items-center justify-center gap-6 text-center">
         <h3 className="text-[25px] font-normal leading-none">
           Choose your pet&apos;s gender

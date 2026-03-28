@@ -3,6 +3,8 @@
 
 @theme {
   --color-brand-red: #E81C24;
+  --color-brand-text: #3A3533;
+  --color-brand-border: #C9C5B9;
 }
 
 html,
