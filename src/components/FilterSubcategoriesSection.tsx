@@ -33,7 +33,7 @@ export default function FilterSubcategoriesSection({
                 onChange={() => onToggleCategory(category.id)}
                 className="peer sr-only"
               />
-              <span className="relative h-6 w-6 border border-brand-red bg-white transition-colors peer-checked:bg-brand-red peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-brand-red after:absolute after:left-[8px] after:top-[3px] after:h-[11px] after:w-[5px] after:rotate-45 after:border-b-2 after:border-r-2 after:border-white after:opacity-0 after:content-[''] peer-checked:after:opacity-100" />
+              <span className="relative h-6 w-6 border border-brand-red bg-white transition-colors peer-checked:bg-brand-red peer-focus-visible:outline peer-focus-visible:outline-offset-2 peer-focus-visible:outline-brand-red after:absolute after:left-2 after:top-0.75 after:h-2.75 after:w-1.25 after:rotate-45 after:border-b-2 after:border-r-2 after:border-white after:opacity-0 after:content-[''] peer-checked:after:opacity-100" />
               <span className="select-none">{category.name}</span>
             </label>
           );

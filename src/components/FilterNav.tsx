@@ -65,7 +65,7 @@ export default function FilterNav() {
 
   return (
     <>
-      <nav className="relative h-18 px-6 text-brand-text before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-brand-border after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-brand-border">
+      <nav className="bg-white relative h-18 px-6 text-brand-text before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-brand-border after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-brand-border">
         <div className="relative z-10 mx-auto flex h-full items-center justify-center gap-x-5 px-6">
           <span className="flex h-full items-center text-[16px] font-medium">
             Filters:

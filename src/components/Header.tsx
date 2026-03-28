@@ -8,7 +8,7 @@ export default function Header() {
   const [activeGender, setActiveGender] = useState<PetGender>("male");
 
   return (
-    <header className="flex h-[183px] w-full items-center justify-center bg-[#F9F8F5] text-brand-text">
+    <header className="flex h-45.75 w-full items-center justify-center bg-brand-background text-brand-text">
       <div className="flex flex-col items-center justify-center gap-6 text-center">
         <h3 className="text-[25px] font-normal leading-none">
           Choose your pet&apos;s gender
@@ -25,7 +25,7 @@ export default function Header() {
                 onClick={() => setActiveGender(option)}
                 aria-pressed={isActive}
                 className={[
-                  "h-[44px] w-[70px] cursor-pointer rounded-[4px] border text-base font-medium capitalize transition-colors",
+                  "h-11 w-17.5 cursor-pointer rounded-sm border text-base font-medium capitalize transition-colors",
                   isActive
                     ? "border-brand-red bg-brand-red text-white"
                     : "border-brand-red bg-transparent text-brand-red hover:bg-brand-red hover:text-white",
