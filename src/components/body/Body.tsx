@@ -1,6 +1,7 @@
 import { useState } from "react";
-import lettersData from "../constants/letters.json";
+import lettersData from "../../constants/letters.json";
 import AlphabetFilter from "./AlphabetFilter";
+import NeedANameHero from "./NeedANameHero";
 
 export default function Body() {
   const [activeLetter, setActiveLetter] = useState("A");
@@ -17,6 +18,8 @@ export default function Body() {
           letters={lettersData.data}
           onLetterSelect={setActiveLetter}
         />
+
+        <NeedANameHero />
       </div>
     </main>
   );

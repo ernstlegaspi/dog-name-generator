@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/components/alphabetfilter.tsx","./src/components/body.tsx","./src/components/filternav.tsx","./src/components/filtersubcategoriessection.tsx","./src/components/header.tsx"],"version":"5.9.3"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/header.tsx","./src/components/body/alphabetfilter.tsx","./src/components/body/body.tsx","./src/components/body/needanamehero.tsx","./src/components/nav/filternav.tsx","./src/components/nav/filtersubcategoriessection.tsx"],"version":"5.9.3"}

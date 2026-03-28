@@ -23,7 +23,7 @@ export default function AlphabetFilter({
                 onClick={() => onLetterSelect(letter)}
                 aria-pressed={isActive}
                 className={[
-                  "flex h-14.5 min-w-14.5 items-center justify-center rounded-full px-3 text-[37px] leading-none text-brand-text transition-colors cursor-pointer",
+                  "flex h-14.5 min-w-14.5 cursor-pointer items-center justify-center rounded-full px-3 text-[37px] leading-none text-brand-text transition-colors",
                   isActive ? "bg-brand-red text-white" : "bg-transparent",
                 ].join(" ")}
               >

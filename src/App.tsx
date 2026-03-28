@@ -1,6 +1,6 @@
-import Body from "./components/Body";
 import Header from "./components/Header";
-import FilterNav from "./components/FilterNav";
+import Body from "./components/body/Body";
+import FilterNav from "./components/nav/FilterNav";
 
 export default function App() {
   return (
