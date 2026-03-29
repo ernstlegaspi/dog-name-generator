@@ -2,9 +2,26 @@ import { useState } from "react";
 import lettersData from "../../constants/letters.json";
 import AlphabetFilter from "./AlphabetFilter";
 import NeedANameHero from "./NeedANameHero";
+import SelectedLetterNamesSection from "./SelectedLetterNamesSection";
 
-export default function Body() {
+type BodyProps = {
+  selectedGender: "male" | "female" | "both";
+  activeFilterGroupId: string | null;
+  selectedCategoryIds: string[];
+};
+
+export default function Body({
+  selectedGender,
+  activeFilterGroupId,
+  selectedCategoryIds,
+}: BodyProps) {
   const [activeLetter, setActiveLetter] = useState("A");
+  const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
+
+  function handleLetterSelect(letter: string) {
+    setActiveLetter(letter);
+    setSelectedLetter(letter);
+  }
 
   return (
     <main className="min-h-0 w-full flex-1 bg-brand-background py-10">
@@ -16,10 +33,19 @@ export default function Body() {
         <AlphabetFilter
           activeLetter={activeLetter}
           letters={lettersData.data}
-          onLetterSelect={setActiveLetter}
+          onLetterSelect={handleLetterSelect}
         />
 
-        <NeedANameHero />
+        {selectedLetter ? (
+          <SelectedLetterNamesSection
+            selectedLetter={selectedLetter}
+            selectedGender={selectedGender}
+            activeFilterGroupId={activeFilterGroupId}
+            selectedCategoryIds={selectedCategoryIds}
+          />
+        ) : (
+          <NeedANameHero />
+        )}
       </div>
     </main>
   );

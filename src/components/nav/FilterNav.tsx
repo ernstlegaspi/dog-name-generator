@@ -1,4 +1,3 @@
-import { useState } from "react";
 import categoriesData from "../../constants/categories.json";
 import FilterSubcategoriesSection from "./FilterSubcategoriesSection";
 
@@ -47,20 +46,19 @@ function ChevronDownIcon({ isActive }: { isActive: boolean }) {
   );
 }
 
-export default function FilterNav() {
-  const [activeOption, setActiveOption] = useState<string | null>(null);
-  const [selectedCategoryIds, setSelectedCategoryIds] = useState<string[]>([]);
+type FilterNavProps = {
+  activeOption: string | null;
+  onActiveOptionChange: (optionId: string | null) => void;
+  selectedCategoryIds: string[];
+  onToggleCategory: (categoryId: string) => void;
+};
 
-  function toggleCategory(categoryId: string) {
-    setSelectedCategoryIds((currentSelection) => {
-      if (currentSelection.includes(categoryId)) {
-        return currentSelection.filter((id) => id !== categoryId);
-      }
-
-      return [...currentSelection, categoryId];
-    });
-  }
-
+export default function FilterNav({
+  activeOption,
+  onActiveOptionChange,
+  selectedCategoryIds,
+  onToggleCategory,
+}: FilterNavProps) {
   const activeGroup = filterGroups.find((group) => group.id === activeOption) ?? null;
 
   return (
@@ -81,7 +79,7 @@ export default function FilterNav() {
                     key={group.id}
                     type="button"
                     aria-expanded={isActive}
-                    onClick={() => setActiveOption(isActive ? null : group.id)}
+                    onClick={() => onActiveOptionChange(isActive ? null : group.id)}
                     className={[
                       "relative inline-flex h-full shrink-0 cursor-pointer items-center gap-2 border-b-2 border-l border-r border-t px-4 text-[16px] font-light text-brand-text transition-colors",
                       isActive
@@ -103,7 +101,7 @@ export default function FilterNav() {
         <FilterSubcategoriesSection
           categories={activeGroup.categories}
           selectedCategoryIds={selectedCategoryIds}
-          onToggleCategory={toggleCategory}
+          onToggleCategory={onToggleCategory}
         />
       ) : null}
     </>

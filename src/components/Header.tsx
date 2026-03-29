@@ -1,12 +1,16 @@
-import { useState } from "react";
-
 type PetGender = "male" | "female" | "both";
 
 const genderOptions: PetGender[] = ["male", "female", "both"];
 
-export default function Header() {
-  const [activeGender, setActiveGender] = useState<PetGender>("male");
+type HeaderProps = {
+  activeGender: PetGender;
+  onGenderChange: (gender: PetGender) => void;
+};
 
+export default function Header({
+  activeGender,
+  onGenderChange,
+}: HeaderProps) {
   return (
     <header className="flex h-45.75 w-full items-center justify-center bg-brand-background text-brand-text">
       <div className="flex flex-col items-center justify-center gap-6 text-center">
@@ -22,7 +26,7 @@ export default function Header() {
               <button
                 key={option}
                 type="button"
-                onClick={() => setActiveGender(option)}
+                onClick={() => onGenderChange(option)}
                 aria-pressed={isActive}
                 className={[
                   "h-11 w-17.5 cursor-pointer rounded-sm border text-base font-medium capitalize transition-colors",
