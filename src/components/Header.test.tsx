@@ -6,12 +6,7 @@ describe("Header", () => {
   it("marks the active gender button and calls back with the next selection", () => {
     const handleGenderChange = vi.fn();
 
-    render(
-      <Header
-        activeGender="male"
-        onGenderChange={handleGenderChange}
-      />,
-    );
+    render(<Header activeGender="male" onGenderChange={handleGenderChange} />);
 
     const maleButton = screen.getByRole("button", { name: "male" });
     const femaleButton = screen.getByRole("button", { name: "female" });

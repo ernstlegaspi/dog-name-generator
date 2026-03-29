@@ -4,8 +4,7 @@ export default function NeedANameHero() {
       <div className="absolute inset-0 flex items-center justify-center">
         <h3 className="pointer-events-none text-center text-[clamp(88px,18vw,280px)] font-bold leading-[0.9] text-brand-red">
           I NEED
-          <br />
-          A NAME
+          <br />A NAME
         </h3>
       </div>
 

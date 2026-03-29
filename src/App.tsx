@@ -24,10 +24,7 @@ export default function App() {
 
   return (
     <div className="flex min-h-screen flex-col bg-brand-background">
-      <Header
-        activeGender={activeGender}
-        onGenderChange={setActiveGender}
-      />
+      <Header activeGender={activeGender} onGenderChange={setActiveGender} />
       <FilterNav
         activeOption={activeFilterGroupId}
         onActiveOptionChange={setActiveFilterGroupId}

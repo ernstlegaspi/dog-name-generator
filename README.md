@@ -33,6 +33,18 @@ npm run build
 npm run test
 ```
 
+### Run linting
+
+```bash
+npm run lint
+```
+
+### Run formatting
+
+```bash
+npm run format
+```
+
 ## Architecture
 
 ### App structure

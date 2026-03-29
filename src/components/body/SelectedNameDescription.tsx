@@ -84,7 +84,7 @@ export default function SelectedNameDescription({
   }
 
   const categoryLabel = activeFilterGroupId
-    ? filterGroupLabelById.get(activeFilterGroupId) ?? null
+    ? (filterGroupLabelById.get(activeFilterGroupId) ?? null)
     : null;
   const matchedSelectedCategoryLabels = displayCategoryIds
     .map((categoryId) => categoryNameById.get(categoryId) ?? null)
@@ -102,11 +102,15 @@ export default function SelectedNameDescription({
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2">
           {activeName.gender.includes("M") ? <GenderIcon type="male" /> : null}
-          {activeName.gender.includes("F") ? <GenderIcon type="female" /> : null}
+          {activeName.gender.includes("F") ? (
+            <GenderIcon type="female" />
+          ) : null}
         </div>
 
         {categoryText ? (
-          <p className="text-[30px] font-normal text-brand-text">{categoryText}</p>
+          <p className="text-[30px] font-normal text-brand-text">
+            {categoryText}
+          </p>
         ) : null}
       </div>
 

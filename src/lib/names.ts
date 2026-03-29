@@ -49,7 +49,9 @@ export function filterNames(
 
     if (
       appliedCategoryIds.length > 0 &&
-      !name.categories.some((categoryId) => appliedCategoryIds.includes(categoryId))
+      !name.categories.some((categoryId) =>
+        appliedCategoryIds.includes(categoryId),
+      )
     ) {
       return false;
     }
@@ -60,10 +62,16 @@ export function filterNames(
 
 export function getPlainTextFromDefinition(definition: string) {
   if (typeof window === "undefined") {
-    return definition.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+    return definition
+      .replace(/<[^>]+>/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
   }
 
-  const parsedDocument = new DOMParser().parseFromString(definition, "text/html");
+  const parsedDocument = new DOMParser().parseFromString(
+    definition,
+    "text/html",
+  );
 
   return parsedDocument.body.textContent?.replace(/\s+/g, " ").trim() ?? "";
 }

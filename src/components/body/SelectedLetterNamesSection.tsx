@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import categoriesData from "../../constants/categories.json";
 import useNamesData from "../../hooks/useNamesData";
-import { filterNames, type NameEntry } from "../../lib/names";
+import { filterNames } from "../../lib/names";
 import SelectedNameDescription from "./SelectedNameDescription";
 
 type SelectedLetterNamesSectionProps = {
@@ -70,7 +70,10 @@ export default function SelectedLetterNamesSection({
     [activeFilterGroupId],
   );
   const appliedCategoryIds = useMemo(
-    () => (selectedCategoryIds.length > 0 ? selectedCategoryIds : fallbackCategoryIds),
+    () =>
+      selectedCategoryIds.length > 0
+        ? selectedCategoryIds
+        : fallbackCategoryIds,
     [fallbackCategoryIds, selectedCategoryIds],
   );
   const matchingNames = useMemo(

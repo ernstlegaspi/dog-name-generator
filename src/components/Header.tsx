@@ -7,10 +7,7 @@ type HeaderProps = {
   onGenderChange: (gender: PetGender) => void;
 };
 
-export default function Header({
-  activeGender,
-  onGenderChange,
-}: HeaderProps) {
+export default function Header({ activeGender, onGenderChange }: HeaderProps) {
   return (
     <header className="flex h-45.75 w-full items-center justify-center bg-brand-background text-brand-text">
       <div className="flex flex-col items-center justify-center gap-6 text-center">
